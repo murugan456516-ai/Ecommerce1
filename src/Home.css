@@ -1,0 +1,257 @@
+/* Container reset to remove default browser margins */
+.page-container {
+  margin: 0;
+  padding: 0;
+  font-family: "Times New Roman", Times, serif;
+}
+
+/* Header with the white-to-brown linear gradient */
+.header-container {
+  background: linear-gradient(to right, #ffffff 40%, #563f3a 100%);
+  text-align: center;
+  padding: 45px 0;
+  border-bottom: 5px solid #362521;
+}
+
+.header-container h1 {
+  margin: 0;
+  font-size: 3.5rem;
+  color: #000000;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Navigation bar styled as inline-block to match the image cutout */
+.nav-bar {
+  background-color: #563f3a;
+  display: inline-block;
+  padding: 10px 15px;
+  margin-top: 0;
+}
+
+.nav-bar a {
+  color: #ffffff;
+  font-size: 1.2rem;
+  margin-right: 15px;
+  text-decoration: underline;
+}
+
+.nav-bar a:last-child {
+  margin-right: 0;
+}
+
+/* Content layer beneath the navigation */
+.main-content {
+  padding: 5px;
+  font-size: 1rem;
+  color: #000000;
+}
+/* Centers the content on the home page */
+.center-text {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.welcome-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #362521;
+}
+
+.welcome-text {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Call to Action Button Styling */
+.cta-container {
+  margin-top: 40px;
+}
+
+.shop-btn {
+  background-color: #563f3a;
+  color: #ffffff;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.shop-btn:hover {
+  background-color: #362521;
+}
+/* Base container typography alignment */
+.home-container {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #2c1e1b;
+  background-color: #fdfdfd;
+}
+
+/* 1. Hero Element Styles */
+.ecom-hero {
+  background: radial-gradient(circle at top right, #fdfbf7 0%, #ecdcd6 100%);
+  padding: 60px 40px;
+  border-radius: 12px;
+  margin: 20px auto 40px auto;
+  max-width: 1200px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+}
+
+.hero-text-block {
+  max-width: 650px;
+  text-align: left;
+}
+
+.promo-badge {
+  background-color: #563f3a;
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.hero-headline {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 3rem;
+  font-weight: 800;
+  margin: 20px 0 12px 0;
+  color: #2c1e1b;
+  line-height: 1.1;
+}
+
+.hero-tagline {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: #5a4b47;
+  margin-bottom: 30px;
+}
+
+.discover-btn {
+  display: inline-block;
+  background-color: #563f3a;
+  color: #ffffff;
+  padding: 12px 24px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.discover-btn:hover {
+  background-color: #362521;
+}
+
+/* 2. Brand Grid Layout */
+.section-title {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #362521;
+}
+
+.brand-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto 50px auto;
+}
+
+.brand-card {
+  background-color: #ffffff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 25px;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.brand-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(86, 63, 58, 0.06);
+}
+
+.brand-img-box {
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.brand-img-box img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.brand-card h4 {
+  font-size: 1.25rem;
+  margin: 10px 0 5px 0;
+  color: #2c1e1b;
+}
+
+.brand-card p {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.brand-link {
+  color: #563f3a;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.brand-link:hover {
+  text-decoration: underline;
+}
+
+/* 3. Global Store Perks Bar */
+.perks-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 40px auto;
+  border-top: 1px solid #eee;
+  padding-top: 30px;
+}
+
+.perk-box {
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background-color: #faf9f8;
+  padding: 15px 20px;
+  border-radius: 8px;
+}
+
+.perk-icon {
+  font-size: 2rem;
+}
+
+.perk-box h5 {
+  margin: 0 0 4px 0;
+  font-size: 1.05rem;
+  color: #362521;
+}
+
+.perk-box p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #666;
+}
