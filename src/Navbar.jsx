@@ -1,20 +1,38 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
-import './App.css'; // Make sure it can access your header/nav styles
+import './Navbar.css'; // We are creating a dedicated CSS file for the navbar
 
 function Navbar() {
   return (
-    <>
-      <header className="header-container">
-        <h1>Mobile &amp; CO</h1>
-      </header>
+    <header className="navbar-container">
+      <div className="navbar-content">
+        
+        {/* Left: Brand Logo */}
+        <Link to="/" className="navbar-logo">
+          Mobile <span>&amp; CO</span>
+        </Link>
 
-      <nav className="nav-bar">
-        <Link to="/">Home</Link>
-        <Link to="/products">Products</Link>
-        <Link to="/cart">Cart</Link>
-        <Link to="/orders">Orders</Link>
-      </nav>
-    </>
+        {/* Center: Main Navigation */}
+        <nav className="navbar-links">
+          <Link to="/" className="nav-item">Home</Link>
+          <Link to="/products" className="nav-item">Shop</Link>
+        </nav>
+
+        {/* Right: User Actions (Orders & Cart) */}
+        <div className="navbar-actions">
+          <Link to="/orders" className="action-btn">
+            📦 <span className="action-text">Orders</span>
+          </Link>
+          
+          <Link to="/cart" className="action-btn cart-btn">
+            🛒 <span className="action-text">Cart</span>
+            {/* Hardcoded badge to show you how a professional cart looks */}
+            <span className="cart-badge">2</span> 
+          </Link>
+        </div>
+        
+      </div>
+    </header>
   );
 }
 

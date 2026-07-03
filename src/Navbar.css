@@ -1,0 +1,122 @@
+/* Sticky background that stays at the top when scrolling */
+.navbar-container {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  border-bottom: 1px solid #f0f0f0;
+}
+
+/* Flexbox layout to perfectly space the 3 sections */
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px 20px;
+}
+
+/* 1. Logo Styling */
+.navbar-logo {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #2c1e1b;
+  text-decoration: none;
+  letter-spacing: -0.5px;
+}
+
+.navbar-logo span {
+  color: #8c6b63; /* Subtle accent color for the "& CO" */
+}
+
+/* 2. Center Links Styling */
+.navbar-links {
+  display: flex;
+  gap: 35px;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: #5a4b47;
+  font-weight: 600;
+  font-size: 1.05rem;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.nav-item:hover {
+  color: #2c1e1b;
+}
+
+/* Sleek animated underline on hover */
+.nav-item::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #2c1e1b;
+  transition: width 0.3s ease;
+}
+
+.nav-item:hover::after {
+  width: 100%;
+}
+
+/* 3. Right Side Action Buttons (Cart & Orders) */
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.action-btn {
+  text-decoration: none;
+  color: #2c1e1b;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  transition: opacity 0.2s ease;
+}
+
+.action-btn:hover {
+  opacity: 0.7;
+}
+
+.cart-btn {
+  position: relative;
+}
+
+/* Shopping Cart Red Notification Badge */
+.cart-badge {
+  background-color: #e63946;
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: bold;
+  height: 20px;
+  min-width: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  position: absolute;
+  top: -10px;
+  right: -12px;
+  padding: 0 5px;
+}
+
+/* Responsive adjustment for smaller screens */
+@media (max-width: 768px) {
+  .action-text {
+    display: none; /* Hides the words "Cart" and "Orders", keeping only the emojis on mobile */
+  }
+  .navbar-links {
+    gap: 15px;
+  }
+}
