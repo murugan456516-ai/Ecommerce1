@@ -1,27 +1,50 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import iphoneImg from './assets/iphone.png'
-import samsungImg from './assets/samsung.png'
-import googleImg from './assets/googlepixel7.png'
-import './App.css'
-import Card from './Card.jsx'
+import React, { useContext, useState } from 'react';
+import './App.css';
+import Card from './Card.jsx';
+import { ShopContext } from './ShopContext.jsx';
 
 function App() {
-  const [count, setCount] = useState(0)
+  // Pull all products from the Context
+  const { products } = useContext(ShopContext);
   
-  const products = [
-    { id: "1", name: "Iphone 14", price: 999, img: iphoneImg },
-    { id: "2", name: "Samsung Galaxy S23", price: 1299, img: samsungImg },
-    { id: "3", name: "Google Pixel 7", price: 1499, img: googleImg }
-  ]
+  // State to track which category is currently selected
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
+  // Automatically generate a list of unique categories from the database
+  const categories = ["All", ...new Set(products.map(item => item.category))];
+
+  // Filter the products based on the selection
+  const filteredProducts = selectedCategory === "All" 
+    ? products 
+    : products.filter(item => item.category === selectedCategory);
 
   return (
     <div className="page-container">
       <main className="main-content">
-        <Card prod={products} />
+        
+        {/* Category Header & Filter Row */}
+        <div className="shop-header">
+          <h2>All Devices & Accessories</h2>
+          
+          <div className="category-filters">
+            {categories.map((category, index) => (
+              <button 
+                key={index} 
+                className={`filter-btn ${selectedCategory === category ? 'active-filter' : ''}`}
+                onClick={() => setSelectedCategory(category)}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Render the filtered products through your Card component */}
+        <Card prod={filteredProducts} />
+
       </main>
     </div>
   )
 }
 
-export default App
+export default App;

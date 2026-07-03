@@ -1,16 +1,18 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { ShopContext } from './ShopContext.jsx';
 import './App.css'; 
 
 function Cart() {
-  // Mock data to simulate items in a cart
-  const cartItems = [
-    { id: "1", name: "Iphone 14", price: 999, quantity: 1 },
-    { id: "3", name: "Google Pixel 7", price: 1499, quantity: 1 }
-  ];
+  const { cartItems, checkout } = useContext(ShopContext);
+  const navigate = useNavigate(); // Used to redirect user after checkout
 
-  // Calculate the total price of the items
-  const total = cartItems.reduce((acc, item) => acc + (item.price * item.quantity), 0);
+  const totalAmount = cartItems.reduce((acc, item) => acc + (item.price * item.quantity), 0);
+
+  const handleCheckout = () => {
+    checkout(totalAmount);
+    navigate('/orders'); // Send them to the orders page after buying
+  };
 
   return (
     <div className="page-container">
@@ -29,8 +31,10 @@ function Cart() {
             ))}
             
             <div className="checkout-section">
-              <h3>Total: ${total}</h3>
-              <button className="shop-btn">Proceed to Checkout</button>
+              <h3>Total: ${totalAmount}</h3>
+              <button className="shop-btn" onClick={handleCheckout}>
+                Proceed to Checkout
+              </button>
             </div>
           </div>
         ) : (

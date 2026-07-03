@@ -110,7 +110,152 @@
   right: -12px;
   padding: 0 5px;
 }
+/* --- REPLACE YOUR CENTER & RIGHT SIDE CSS WITH THIS --- */
 
+/* 2. Center Section: Links & Search */
+.navbar-center {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex: 1;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: #5a4b47;
+  font-weight: 600;
+  font-size: 1.05rem;
+  position: relative;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+}
+
+.nav-item:hover {
+  color: #2c1e1b;
+}
+
+.nav-item::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #2c1e1b;
+  transition: width 0.3s ease;
+}
+
+.nav-item:hover::after {
+  width: 100%;
+}
+
+/* Search Bar UI */
+.search-container {
+  display: flex;
+  align-items: center;
+  background-color: #f5f3f2;
+  border-radius: 20px;
+  padding: 6px 15px;
+  width: 100%;
+  max-width: 350px;
+  border: 1px solid transparent;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.search-container:focus-within {
+  border-color: #563f3a;
+  background-color: #ffffff;
+}
+
+.search-input {
+  border: none;
+  background: transparent;
+  outline: none;
+  width: 100%;
+  padding: 5px;
+  font-size: 0.95rem;
+  color: #2c1e1b;
+}
+
+.search-input::placeholder {
+  color: #a39693;
+}
+
+.search-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0;
+}
+
+/* 3. Right Side Action Buttons (Account, Cart, Orders) */
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.action-btn {
+  text-decoration: none;
+  color: #2c1e1b;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  transition: opacity 0.2s ease;
+  white-space: nowrap;
+}
+
+.action-btn:hover {
+  opacity: 0.7;
+}
+
+.cart-btn {
+  position: relative;
+}
+
+/* Shopping Cart Red Notification Badge */
+.cart-badge {
+  background-color: #e63946;
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: bold;
+  height: 18px;
+  min-width: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  padding: 0 4px;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 1024px) {
+  .search-container {
+    display: none; /* Hide search bar on tablets to save space */
+  }
+}
+
+@media (max-width: 768px) {
+  .action-text {
+    display: none; /* Hide words, keep only emojis on phones */
+  }
+  .navbar-links {
+    display: none; /* Hide links on mobile (this is where you would usually add a hamburger menu) */
+  }
+}
 /* Responsive adjustment for smaller screens */
 @media (max-width: 768px) {
   .action-text {
